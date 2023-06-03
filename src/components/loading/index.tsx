@@ -12,14 +12,12 @@ const Loading: React.FC<IProps> = (props: IProps) => {
   };
 
   return (
-    <View style={styles.contentLoading}>
-      {loading && (
-        <>
-          <ActivityIndicator color={returnColor()} size={'large'} />
-          <Text style={{color: returnColor(), marginTop: 10}}>Loading...</Text>
-        </>
-      )}
-    </View>
+    loading && (
+      <View style={styles.contentLoading}>
+        <ActivityIndicator color={returnColor()} size={'large'} />
+        <Text style={{color: returnColor(), marginTop: 10}}>Loading...</Text>
+      </View>
+    )
   );
 };
 

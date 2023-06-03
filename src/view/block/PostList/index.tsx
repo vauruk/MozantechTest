@@ -1,42 +1,29 @@
-import React, {useEffect} from 'react';
-import {RootState, useAppDispatch} from '../../store';
-//import {useSelector} from 'react-redux';
+import React from 'react';
 
-import {
-  View,
-  Text,
-  SafeAreaView,
-  useColorScheme,
-  ActivityIndicator,
-} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import {IProps} from './types';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {useSelector} from 'react-redux';
-import {fetchPostsForm} from '../../store/posts';
-import styles from './styles';
-import {Loading} from '../../components';
 
-const Home: React.FC<IProps> = (props: IProps) => {
-  const isDarkMode = useColorScheme() === 'dark';
+const PostList: React.FC<IProps> = (props: IProps) => {
+  const {postList} = props;
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const renderItem = ({item}) => {
+    return (
+      <View key={item.link_flair_template_id}>
+        <Text>{item.data.title}</Text>
+        <Text style={{backgroundColor: 'red'}}>{item.data.selftext}</Text>
+      </View>
+    );
   };
-  const dispatch = useAppDispatch();
-  const loading = useSelector((state: RootState) => state.postsForm.loading);
-  const listPost = useSelector((state: RootState) => state.postsForm.listPost);
-
-  useEffect(() => {
-    dispatch(fetchPostsForm());
-  }, []);
-
-  console.log('HOme:  ', loading, listPost);
+  console.log('PostList:  ', postList);
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <Loading loading={loading} isDarkMode={isDarkMode} />
-      <View></View>
-    </SafeAreaView>
+    <View style={{height: '100%'}}>
+      <FlatList
+        data={postList}
+        renderItem={renderItem}
+        keyExtractor={item => item.created}
+      />
+    </View>
   );
 };
 
-export default Home;
+export default PostList;

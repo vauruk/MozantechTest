@@ -15,6 +15,8 @@ import {useSelector} from 'react-redux';
 import {fetchPostsForm} from '../../store/posts';
 import styles from './styles';
 import {Loading} from '../../components';
+import PostList from '../block/PostList';
+import consoleDebug from '../../util/debugMode';
 
 const Home: React.FC<IProps> = (props: IProps) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,17 +26,17 @@ const Home: React.FC<IProps> = (props: IProps) => {
   };
   const dispatch = useAppDispatch();
   const loading = useSelector((state: RootState) => state.postsForm.loading);
-  const listPost = useSelector((state: RootState) => state.postsForm.listPost);
+  const postList = useSelector((state: RootState) => state.postsForm.postList);
 
   useEffect(() => {
     dispatch(fetchPostsForm());
   }, []);
 
-  console.log('HOme:  ', loading, listPost);
+  consoleDebug('PostList', PostList);
   return (
     <SafeAreaView style={backgroundStyle}>
       <Loading loading={loading} isDarkMode={isDarkMode} />
-      <View></View>
+      <PostList postList={postList} />
     </SafeAreaView>
   );
 };

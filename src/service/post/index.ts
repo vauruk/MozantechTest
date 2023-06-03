@@ -8,7 +8,7 @@ export const fetchPosts = () => {
     method: 'get',
     url: URL,
   }).then(response => {
-    consoleDebug(response.data);
-    return response.data;
+    consoleDebug('fetchPosts', response.data.data);
+    return response.data.data;
   });
 };

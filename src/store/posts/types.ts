@@ -5,7 +5,7 @@ export interface FormState {
   postList: [IChildremData] | undefined;
 }
 
-interface IChildremData {
+export interface IChildremData {
   approved_at_utc: string;
   subreddit: string;
   selftext: string;
@@ -114,7 +114,7 @@ interface IChildremData {
   media: string;
   is_video: boolean;
 }
-export interface IDataPost {
+export interface IDataPostResponse {
   after: string;
   dist: number;
   modhash: string;
@@ -123,5 +123,5 @@ export interface IDataPost {
 }
 export interface IPostResponse {
   kind: string;
-  data: IDataPost;
+  //  data: IDataPost;
 }

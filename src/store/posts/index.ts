@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {FormState, IPostResponse} from './types';
+import {FormState, IDataPostResponse, IPostResponse} from './types';
 
 import useExceptionRequest from '../../hooks/exceptionRequest';
 import type {RootState} from '..';
@@ -45,10 +45,10 @@ export const postFormSlice = createSlice({
     });
     builder.addCase(
       fetchPostsForm.fulfilled,
-      (state: FormState, action: PayloadAction<IPostResponse>) => {
+      (state: FormState, action: PayloadAction<IDataPostResponse>) => {
         const newstate = {...state};
-        consoleDebug('fetchPostsForm: ', action.payload.data.children);
-        newstate.postList = action.payload.data.children;
+        consoleDebug('fetchPostsForm: ', action.payload);
+        newstate.postList = action.payload.children;
         newstate.submitError = undefined;
         newstate.loading = false;
         return newstate;

@@ -14,8 +14,8 @@ const validateFistPosition = params => {
 const consoleDebug = (...params) => {
   const error = validateFistPosition(params);
   error
-    ? __DEV__ && console.error('[CIALAZER-DEBUG-MODE-ERROR]:', params)
-    : __DEV__ && console.log('[CIALAZER-DEBUG-MODE]:', params);
+    ? __DEV__ && console.error('[DEBUG-MODE-ERROR]:', params)
+    : __DEV__ && console.log('[DEBUG-MODE]:', params);
 };
 
 export default consoleDebug;
