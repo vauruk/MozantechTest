@@ -35,7 +35,7 @@ const Home: React.FC<IProps> = (props: IProps) => {
 
   consoleDebug('PostList', PostList);
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={[backgroundStyle]}>
       <BarSort />
       <Loading loading={loading} isDarkMode={isDarkMode} />
       <PostList postList={postList} />

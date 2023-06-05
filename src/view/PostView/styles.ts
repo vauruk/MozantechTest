@@ -7,7 +7,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  loadingBackgroundColor: {},
+  loading: {
+    padding: 40,
+    marginBottom: 300,
+    backgroundColor: '#ffffff',
+    alignContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    height: '100%',
+    width: '100%',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
 });
 
 export default styles;
