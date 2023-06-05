@@ -7,7 +7,6 @@ import React from 'react';
 import {Props} from './types';
 import {Text, TouchableHighlight} from 'react-native';
 import styles from './styles';
-import consoleDebug from '../../util/debugMode';
 
 const Button: React.FC<Props> = ({
   testID,
@@ -19,7 +18,6 @@ const Button: React.FC<Props> = ({
   const _handlePress = () => {
     onPress?.();
   };
-  consoleDebug('active', active);
   return (
     <TouchableHighlight
       testID={testID}

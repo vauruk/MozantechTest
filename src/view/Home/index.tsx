@@ -1,22 +1,13 @@
 import React, {useEffect} from 'react';
 import {RootState, useAppDispatch} from '../../store';
-//import {useSelector} from 'react-redux';
 
-import {
-  SafeAreaView,
-  Text,
-  TouchableHighlight,
-  useColorScheme,
-} from 'react-native';
+import {SafeAreaView, useColorScheme} from 'react-native';
 import {IProps} from './types';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {useSelector} from 'react-redux';
 import {fetchPostsForm} from '../../store/posts';
 import {Loading} from '../../components';
 import PostList from '../block/PostList';
-import consoleDebug from '../../util/debugMode';
-import Row from '../../components/FlexBox/Row';
-import Col from '../../components/FlexBox/Col';
 import BarSort from '../block/BarSort';
 
 const Home: React.FC<IProps> = (props: IProps) => {
@@ -33,12 +24,11 @@ const Home: React.FC<IProps> = (props: IProps) => {
     dispatch(fetchPostsForm());
   }, []);
 
-  consoleDebug('PostList', PostList);
   return (
     <SafeAreaView style={[backgroundStyle]}>
       <BarSort />
       <Loading loading={loading} isDarkMode={isDarkMode} />
-      <PostList postList={postList} />
+      {!loading && <PostList postList={postList} />}
     </SafeAreaView>
   );
 };

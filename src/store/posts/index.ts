@@ -4,7 +4,6 @@ import {FormState, IChildren, IDataPostResponse} from './types';
 import useExceptionRequest from '../../hooks/exceptionRequest';
 import type {RootState} from '..';
 import {fetchPosts} from '../../service/post';
-import consoleDebug from '../../util/debugMode';
 import {SortType} from '../../components/Button/types';
 
 export const initialState: FormState = {
@@ -40,8 +39,10 @@ export const postFormSlice = createSlice({
   reducers: {
     handleSortList(state: FormState, action: PayloadAction<SortType>) {
       const newstate = {...state};
-      consoleDebug('handleSortList', action.payload);
-      if (action.payload === SortType.POPULAR) {
+      if (
+        action.payload === SortType.POPULAR ||
+        action.payload === SortType.HOT
+      ) {
         newstate.postList = newstate.postList.sort(
           (a: IChildren, b: IChildren) => {
             return b.data.num_comments - a.data.num_comments;
@@ -50,11 +51,10 @@ export const postFormSlice = createSlice({
       } else if (action.payload === SortType.TOP) {
         newstate.postList = newstate.postList.sort(
           (a: IChildren, b: IChildren) => {
-            return a.data.score - b.data.score;
+            return b.data.score - a.data.score;
           },
         );
       } else if (action.payload === SortType.NEW) {
-        consoleDebug('News');
         newstate.postList = newstate.postList.sort(
           (a: IChildren, b: IChildren) => {
             return a.data.created - b.data.created;

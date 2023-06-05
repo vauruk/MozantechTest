@@ -22,10 +22,20 @@ src/
 
 ```
 
+# Sort decision
 
+In sort decision used in:
 
---------------------------------------
+```
+New -> sort by createdDate
+Top -> sort by score number
+Popular -> sort by num_comments
+Hot/Controversial -> sort by num_comments
+```
 
+And all this sorting is doing in memory
+
+---
 
 ✔ Downloading template
 ✔ Copying template
