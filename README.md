@@ -1,3 +1,27 @@
+## Introdution
+
+I used the fallow frameworks:
+
+React Native CLI to start the project
+React Navigation to manager a navigation between screens
+Redux tool kit to manager state
+React Native Webview
+Apply Solid and Atomic Design
+Project Structure is :
+
+```
+src/
+    assets/ -> where is the images of the project
+    components/ -> where is all the generic components
+    hooks/ -> Where is the generics hooks about project ex: exceptionRequest hook
+    service/ -> Where is the necessary classes to connected the externals services such as REST Api/ GraphQL
+    store/ -> where is the basic config of the redux (reducers/store)
+    util/ -> where is generic classes to help ex: consoleDebug or formatDate
+    view/ - where is all the main screams ex: Home / PostView (Webview page)
+        blocks/ -> look like main parts of the project view - what is the mains difference between /components and /blocks(common) - components are generics components such as calendar component, button, label etc, and /blocks are the business reusable components, such as PostItem, PostList
+
+```
+
 ✔ Downloading template
 ✔ Copying template
 ✔ Processing template

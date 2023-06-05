@@ -1,1 +1,1 @@
-export {default as userAlertVK} from './useAlertVk';
+export {default as exceptionRequest} from './exceptionRequest';
