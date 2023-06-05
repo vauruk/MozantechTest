@@ -14,7 +14,7 @@ src/
     assets/ -> where is the images of the project
     components/ -> where is all the generic components
     hooks/ -> Where is the generics hooks about project ex: exceptionRequest hook
-    service/ -> Where is the necessary classes to connected the externals services such as REST Api/ GraphQL
+    service/ -> Where is the necessary classes to connect the externals services such as REST Api/ GraphQL
     store/ -> where is the basic config of the redux (reducers/store)
     util/ -> where is generic classes to help ex: consoleDebug or formatDate
     view/ - where is all the main screams ex: Home / PostView (Webview page)
@@ -22,7 +22,7 @@ src/
 
 ```
 
-# Sort decision
+# About Sort decision
 
 In sort decision used in:
 

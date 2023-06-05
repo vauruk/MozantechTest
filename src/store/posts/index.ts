@@ -10,15 +10,11 @@ export const initialState: FormState = {
   loading: false,
   submitError: undefined,
   postList: undefined,
-  //postListSorted: undefined,
 };
 const NAME_SLICE = 'fetchPostsForm';
 export const fetchPostsForm = createAsyncThunk(
   NAME_SLICE,
   async (_ = undefined, thunkAPI) => {
-    const {
-      //signInForm: {authData},
-    } = thunkAPI.getState() as RootState;
     const {handleException} = useExceptionRequest();
     try {
       const dataReturn = fetchPosts();
