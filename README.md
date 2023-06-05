@@ -1,4 +1,4 @@
-## Introdution
+## Introduction
 
 I used the follow frameworks:
 
@@ -6,7 +6,7 @@ React Native CLI to start the project
 React Navigation to manager a navigation between screens
 Redux tool kit to manager state
 React Native Webview
-Apply Solid and Atomic Design
+Apply some concepts SOLID and Atomic Design
 Project Structure is :
 
 ```
@@ -21,6 +21,11 @@ src/
         blocks/ -> look like main parts of the project view - what is the mains difference between /components and /blocks(common) - components are generics components such as calendar component, button, label etc, and /blocks are the business reusable components, such as PostItem, PostList
 
 ```
+
+
+
+--------------------------------------
+
 
 ✔ Downloading template
 ✔ Copying template
