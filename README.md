@@ -17,14 +17,14 @@ A brief explanation of your design and assumptions along with your code.
 
 ## Introduction solution
 
-I used the follow frameworks:
+I used the following frameworks:
 
-React Native CLI to start the project
-React Navigation to manager a navigation between screens
-Redux tool kit to manager state
-React Native Webview
-Apply some concepts SOLID and Atomic Design
-Project Structure is :
+- React Native CLI to start the project 
+- React Navigation to manage navigation between screens Redux tool kit, to manage state 
+- React Native Webview, applied some concepts SOLID and Atomic Design,
+- And I created a little design system to make it easier my implemantation
+
+The project structure is:
 
 ```
 src/
@@ -52,22 +52,39 @@ Hot/Controversial -> sort by num_comments
 
 And all this sorting is doing in memory
 
+## Demo
+
+![Simulator Screen Recording - iPhone SE (3rd generation) - 2023-06-05 at 11 25 53](https://github.com/vauruk/MozantechTest/assets/12579082/449fb4c9-811c-44ae-b917-b53ab89f3020)
+
+
+
 ---
 
 ✔ Downloading template
+
 ✔ Copying template
+
 ✔ Processing template
+
 ✔ Installing Bundler
+
 ✔ Installing CocoaPods dependencies (this may take a few minutes)
 
 Run instructions for Android:
+
 • Have an Android emulator running (quickest way to get started), or a device connected.
+
 • cd "/Users/vauruk/Documents/workspace/mozantech/MozantechTest" && npx react-native run-android
 
+
 Run instructions for iOS:
+
 • cd "/Users/vauruk/Documents/workspace/mozantech/MozantechTest" && npx react-native run-ios - or -
+
 • Open MozantechTest/ios/MozantechTest.xcworkspace in Xcode or run "xed -b ios"
+
 • Hit the Run button
 
 Run instructions for macOS:
+
 • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.
