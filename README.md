@@ -1,3 +1,4 @@
+# React Native Coding Challenge
 ## Introduction
 
 I used the follow frameworks:
@@ -22,7 +23,7 @@ src/
 
 ```
 
-# Sort decision
+## Sort decision
 
 In sort decision used in:
 
