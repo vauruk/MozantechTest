@@ -3,6 +3,7 @@ export interface FormState {
   loading: boolean;
   submitError: string | undefined;
   postList: [IChildren] | undefined;
+  // postListSorted: [IChildren] | undefined;
 }
 export interface IChildren {
   kind: string;

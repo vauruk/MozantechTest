@@ -1,15 +1,17 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {FormState, IDataPostResponse} from './types';
+import {FormState, IChildren, IDataPostResponse} from './types';
 
 import useExceptionRequest from '../../hooks/exceptionRequest';
 import type {RootState} from '..';
 import {fetchPosts} from '../../service/post';
 import consoleDebug from '../../util/debugMode';
+import {SortType} from '../../components/Button/types';
 
 export const initialState: FormState = {
   loading: false,
   submitError: undefined,
   postList: undefined,
+  //postListSorted: undefined,
 };
 const NAME_SLICE = 'fetchPostsForm';
 export const fetchPostsForm = createAsyncThunk(
@@ -35,7 +37,32 @@ export const fetchPostsForm = createAsyncThunk(
 export const postFormSlice = createSlice({
   name: 'postForm',
   initialState,
-  reducers: {},
+  reducers: {
+    handleSortList(state: FormState, action: PayloadAction<SortType>) {
+      const newstate = {...state};
+      consoleDebug('handleSortList', action.payload);
+      if (action.payload === SortType.POPULAR) {
+        newstate.postList = newstate.postList.sort(
+          (a: IChildren, b: IChildren) => {
+            return b.data.num_comments - a.data.num_comments;
+          },
+        );
+      } else if (action.payload === SortType.TOP) {
+        newstate.postList = newstate.postList.sort(
+          (a: IChildren, b: IChildren) => {
+            return a.data.score - b.data.score;
+          },
+        );
+      } else if (action.payload === SortType.NEW) {
+        consoleDebug('News');
+        newstate.postList = newstate.postList.sort(
+          (a: IChildren, b: IChildren) => {
+            return a.data.created - b.data.created;
+          },
+        );
+      }
+    },
+  },
   extraReducers: (builder: any) => {
     builder.addCase(fetchPostsForm.pending, (state: FormState) => {
       const newstate = {...state};
@@ -47,7 +74,6 @@ export const postFormSlice = createSlice({
       fetchPostsForm.fulfilled,
       (state: FormState, action: PayloadAction<IDataPostResponse>) => {
         const newstate = {...state};
-        consoleDebug('fetchPostsForm: ', action.payload);
         newstate.postList = action.payload.children;
         newstate.submitError = undefined;
         newstate.loading = false;
@@ -62,5 +88,7 @@ export const postFormSlice = createSlice({
     });
   },
 });
+
+export const {handleSortList} = postFormSlice.actions;
 
 export default postFormSlice.reducer;

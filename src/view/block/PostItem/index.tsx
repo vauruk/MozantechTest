@@ -15,8 +15,6 @@ const PostItem: React.FC<IProps> = (props: IProps) => {
 
   const navigation = useNavigation();
 
-  console.log('Item post: ', PathNav.POST_VIEW, item);
-
   const handleNav = () => {
     navigation.navigate(PathNav.POST_VIEW, {
       url: item.data.url,

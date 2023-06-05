@@ -1,23 +1,18 @@
 import {StyleSheet} from 'react-native';
 
-export default styles = (backgroundColor?: string) => {
+export default styles = (active: boolean) => {
   return StyleSheet.create({
-    buttonColSort: {
-      height: 40,
-      borderBottomColor: 'gray',
-      borderBottomWidth: 0.5,
-    },
     buttonPress: {
       width: '100%',
       height: '100%',
-      backgroundColor: backgroundColor ? backgroundColor : '#ffffff',
+      backgroundColor: active ? '#273ca7' : '#ffffff',
       alignContent: 'center',
       alignSelf: 'center',
       alignItems: 'center',
       justifyContent: 'center',
     },
     textButton: {
-      color: backgroundColor ? '#ffffff' : '#00000',
+      color: active ? '#ffffff' : '#000000',
     },
   });
 };

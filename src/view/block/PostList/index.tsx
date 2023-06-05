@@ -11,7 +11,7 @@ const PostList: React.FC<IProps> = (props: IProps) => {
   const renderItem = ({item}) => {
     return <PostItem item={item} />;
   };
-  console.log('PostList:  ', postList);
+
   return (
     <View style={styles.content}>
       <FlatList
