@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {FormState, IDataPostResponse, IPostResponse} from './types';
+import {FormState, IDataPostResponse} from './types';
 
 import useExceptionRequest from '../../hooks/exceptionRequest';
 import type {RootState} from '..';
@@ -11,9 +11,9 @@ export const initialState: FormState = {
   submitError: undefined,
   postList: undefined,
 };
-
+const NAME_SLICE = 'fetchPostsForm';
 export const fetchPostsForm = createAsyncThunk(
-  'signInForm',
+  NAME_SLICE,
   async (_ = undefined, thunkAPI) => {
     const {
       //signInForm: {authData},
@@ -26,7 +26,7 @@ export const fetchPostsForm = createAsyncThunk(
       return handleException({
         error,
         thunkAPI,
-        nameFunction: 'fetchPostsForm',
+        nameFunction: NAME_SLICE,
       });
     }
   },
@@ -54,16 +54,12 @@ export const postFormSlice = createSlice({
         return newstate;
       },
     );
-    builder.addCase(
-      fetchPostsForm.rejected,
-      (state: FormState, action: PayloadAction<any>) => {
-        const newstate = {...state};
-        //const {error} = action.payload;
-        newstate.submitError = 'Informações de autenticação inválidas!';
-        newstate.loading = false;
-        return newstate;
-      },
-    );
+    builder.addCase(fetchPostsForm.rejected, (state: FormState) => {
+      const newstate = {...state};
+      newstate.submitError = 'There are problems to load data!';
+      newstate.loading = false;
+      return newstate;
+    });
   },
 });
 

@@ -2,10 +2,13 @@ export interface FormState {
   token: string | undefined;
   loading: boolean;
   submitError: string | undefined;
-  postList: [IChildremData] | undefined;
+  postList: [IChildren] | undefined;
 }
-
-export interface IChildremData {
+export interface IChildren {
+  kind: string;
+  data: IChildrenData;
+}
+interface IChildrenData {
   approved_at_utc: string;
   subreddit: string;
   selftext: string;
@@ -119,9 +122,6 @@ export interface IDataPostResponse {
   dist: number;
   modhash: string;
   geo_filter: string;
-  children: [IChildremData];
+  children: [IChildren];
 }
-export interface IPostResponse {
-  kind: string;
-  //  data: IDataPost;
-}
+export interface PostItem extends IDataPostResponse {}

@@ -7,10 +7,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  content: {
-    height: '100%',
-    backgroundColor: 'white',
-  },
   loadingBackgroundColor: {},
 });
 
