@@ -1,6 +1,6 @@
 ## Introdution
 
-I used the fallow frameworks:
+I used the follow frameworks:
 
 React Native CLI to start the project
 React Navigation to manager a navigation between screens
