@@ -10,7 +10,7 @@ import {Loading} from '../../components';
 import PostList from '../block/PostList';
 import BarSort from '../block/BarSort';
 
-const Home: React.FC<IProps> = (props: IProps) => {
+const Home: React.FC<IProps> = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

@@ -1,20 +1,16 @@
 import React, {useState} from 'react';
 
-import {Text, TouchableHighlight} from 'react-native';
 import {IProps} from './types';
 import styles from './styles';
 import Row from '../../../components/FlexBox/Row';
 import Col from '../../../components/FlexBox/Col';
-import {RootState, useAppDispatch} from '../../../store';
-import {useSelector} from 'react-redux';
+import {useAppDispatch} from '../../../store';
 import {handleSortList} from '../../../store/posts';
 import {SortType} from '../../../components/Button/types';
 import {Button} from '../../../components';
 
-const BarSort: React.FC<IProps> = (props: IProps) => {
+const BarSort: React.FC<IProps> = () => {
   const dispatch = useAppDispatch();
-  const loading = useSelector((state: RootState) => state.postsForm.loading);
-  const postList = useSelector((state: RootState) => state.postsForm.postList);
 
   const [activeBar, setActiveBar] = useState<SortType>(SortType.NONE);
 

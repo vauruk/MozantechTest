@@ -85,3 +85,53 @@ Run instructions for iOS:
 Run instructions for macOS:
 
 • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.
+
+Why to use this architecture?
+
+Redux tool kit
+
+- I used React Redux to manage my React state and share this state with other components, it is easy to use and to understand how it works,
+
+React Native CLI
+
+- Why I used React Native CLI because on the main page of React Native the engineers explain that é better for a developer who prefers to do your own architecture
+
+For example in React Native Expo GO
+
+- The tradeoff is that the Expo Go app does not allow you to add custom native code — you can only use native modules, but it is very fast to implement and publish for clients to see,
+
+In my architecture,
+
+# SOLID stands for:
+
+S - Single-responsiblity Principle
+
+O - Open-closed Principle
+
+L - Liskov Substitution Principle
+
+I - Interface Segregation Principle
+
+D - Dependency Inversion Principle
+
+# Atomic Design:
+
+Atomic design is methodology for creating design systems. There are five distinct levels in atomic design:
+
+1 - Atoms
+
+2 - Molecules
+
+3 - Organisms
+
+4 - Templates
+
+5 - Pages
+
+why atomic design (Bradfrost)
+
+In a lot of ways, this is how we’ve been doing things all along, even if we haven’t been consciously thinking about it in this specific way.
+
+Atomic design provides a clear methodology for crafting design systems. Clients and team members are able to better appreciate the concept of design systems by actually seeing the steps laid out in front of them.
+
+Atomic design gives us the ability to traverse from abstract to concrete. Because of this, we can create systems that promote consistency and scalability while simultaneously showing things in their final context. And by assembling rather than deconstructing, we’re crafting a system right out of the gate instead of cherry picking patterns after the fact.

@@ -8,7 +8,7 @@ const Loading: React.FC<IProps> = (props: IProps) => {
   const {loading, isDarkMode} = props;
 
   const returnColor = () => {
-    return isDarkMode ? '#ffffff' : '#eeeee';
+    return isDarkMode ? '#ffffff' : '#000000';
   };
 
   return (

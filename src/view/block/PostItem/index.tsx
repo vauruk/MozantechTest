@@ -31,7 +31,7 @@ const PostItem: React.FC<IProps> = (props: IProps) => {
             <Col flex={0.2} style={styles.startText}>
               <Image style={styles.tinyLogo} source={person} />
             </Col>
-            <Col flex={0.8} style={{alignItems: 'flex-start'}}>
+            <Col flex={0.8} style={styles.startText}>
               <Text>Author: {item.data?.author}</Text>
               <Text>Title: {item.data?.title}</Text>
             </Col>
@@ -40,7 +40,7 @@ const PostItem: React.FC<IProps> = (props: IProps) => {
             <Col flex={0.5} style={styles.startText}>
               <Text>Votes: {item.data.score}</Text>
             </Col>
-            <Col flex={0.5} style={{alignItems: 'flex-end'}}>
+            <Col flex={0.5} style={styles.endText}>
               <Text>Comments: {item.data.num_comments}</Text>
             </Col>
           </Row>
@@ -48,7 +48,7 @@ const PostItem: React.FC<IProps> = (props: IProps) => {
             <Col flex={0.5} style={styles.startText}>
               <Text>{moment(item.data?.created_utc).fromNow()}</Text>
             </Col>
-            <Col flex={0.5} style={{alignItems: 'flex-end'}}>
+            <Col flex={0.5} style={styles.endText}>
               <Text>
                 {moment(item.data?.created_utc).format('DD/MM/yyyy - HH:mm:ss')}
               </Text>

@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
   startText: {
     alignItems: 'flex-start',
   },
+  endText: {
+    alignItems: 'flex-end',
+  },
 });
 
 export default styles;

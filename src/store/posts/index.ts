@@ -2,7 +2,6 @@ import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {FormState, IChildren, IDataPostResponse} from './types';
 
 import useExceptionRequest from '../../hooks/exceptionRequest';
-import type {RootState} from '..';
 import {fetchPosts} from '../../service/post';
 import {SortType} from '../../components/Button/types';
 

@@ -1,26 +1,25 @@
 import React, {useEffect, useState} from 'react';
 
-import {ActivityIndicator, View, useColorScheme} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import {IProps} from './types';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {WebView} from 'react-native-webview';
 import styles from './styles';
 import consoleDebug from '../../util/debugMode';
 
 const PostView: React.FC<IProps> = props => {
-  const [url, setUrl] = useState<string>('');
+  const [urlLocal, setUrlLocal] = useState<string>('');
   const {route} = props;
 
   useEffect(() => {
     const {url} = route.params;
-    setUrl(url);
+    setUrlLocal(url);
   }, []);
 
   return (
     <View style={{height: '100%', width: '100%'}}>
       <WebView
         source={{
-          uri: url,
+          uri: urlLocal,
         }}
         cacheEnabled={false}
         cacheMode="LOAD_NO_CACHE"
